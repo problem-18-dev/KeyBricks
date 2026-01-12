@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8bdws1saiud"]
+
+[ext_resource type="Script" uid="uid://c1oqdfdba7rqq" path="res://scenes/letter/letter.gd" id="1_k7hw5"]
+[ext_resource type="Theme" uid="uid://n57051tya53w" path="res://hud/theme.tres" id="2_vybn4"]
+
+[node name="Letter" type="Node2D"]
+script = ExtResource("1_k7hw5")
+letter = "A"
+
+[node name="Underscore" type="Label" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 1)
+theme = ExtResource("2_vybn4")
+text = "-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Letter" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -65.0
+offset_right = 35.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vybn4")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

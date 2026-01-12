@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=4 uid="uid://bu8b86i2uavg5"]
+
+[ext_resource type="Script" uid="uid://msbymoph5u75" path="res://scenes/level.gd" id="1_klq6b"]
+[ext_resource type="PackedScene" uid="uid://dlelom8h8dx5i" path="res://scenes/ball/ball.tscn" id="2_b121j"]
+[ext_resource type="PackedScene" uid="uid://dh4hrqr4u33j" path="res://scenes/paddle/paddle.tscn" id="3_8c41q"]
+[ext_resource type="PackedScene" uid="uid://c8bdws1saiud" path="res://scenes/letter/letter.tscn" id="4_olg7q"]
+[ext_resource type="PackedScene" uid="uid://daiiabcomntiq" path="res://scenes/brick/brick.tscn" id="5_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://cqu7w6wupf2du" path="res://assets/wall.png" id="8_b121j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r41h"]
+resource_name = "Wall"
+texture = ExtResource("8_b121j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_klq6b"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 8
+sources/0 = SubResource("TileSetAtlasSource_2r41h")
+
+[node name="Level" type="Node"]
+script = ExtResource("1_klq6b")
+ball_scene = ExtResource("2_b121j")
+paddle_scene = ExtResource("3_8c41q")
+letter_scene = ExtResource("4_olg7q")
+brick_scene = ExtResource("5_t1rx8")
+columns = 6
+rows = 6
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAYAAAAAAAAAAAAAACAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAB0AAAAAAAAAAAAAABwAAAAAAAAAAAAAABsAAAAAAAAAAAAAABoAAAAAAAAAAAAAABkAAAAAAAAAAAAAABgAAAAAAAAAAAAAABcAAAAAAAAAAAAAABYAAAAAAAAAAAAAABUAAAAAAAAAAAAAABQAAAAAAAAAAAAAABMAAAAAAAAAAAAAABIAAAAAAAAAAAAAABEAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAhAAEAAAAAAAAAAAAhACEAAAAAAAAAAAAhACAAAAAAAAAAAAAhAB8AAAAAAAAAAAAhAB4AAAAAAAAAAAAhAB0AAAAAAAAAAAAhABwAAAAAAAAAAAAhABsAAAAAAAAAAAAhABoAAAAAAAAAAAAhABkAAAAAAAAAAAAhABgAAAAAAAAAAAAhABcAAAAAAAAAAAAhABYAAAAAAAAAAAAhABUAAAAAAAAAAAAhABQAAAAAAAAAAAAhABMAAAAAAAAAAAAhABIAAAAAAAAAAAAhABEAAAAAAAAAAAAhABAAAAAAAAAAAAAhAA8AAAAAAAAAAAAhAA4AAAAAAAAAAAAhAA0AAAAAAAAAAAAhAAwAAAAAAAAAAAAhAAsAAAAAAAAAAAAhAAoAAAAAAAAAAAAhAAkAAAAAAAAAAAAhAAgAAAAAAAAAAAAhAAcAAAAAAAAAAAAhAAYAAAAAAAAAAAAhAAUAAAAAAAAAAAAhAAQAAAAAAAAAAAAhAAMAAAAAAAAAAAAhAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_klq6b")
+
+[node name="Bricks" type="Node" parent="."]
+
+[node name="BallSpawnLocation" type="Marker2D" parent="."]
+position = Vector2(540, 890)
+
+[node name="PaddleSpawnLocation" type="Marker2D" parent="."]
+position = Vector2(540, 980)
+
+[node name="BricksStartLocation" type="Marker2D" parent="."]
+position = Vector2(150, 200)

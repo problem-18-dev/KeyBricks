@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://daiiabcomntiq"]
+
+[ext_resource type="Script" uid="uid://dqkh7xioddn1e" path="res://scenes/brick/brick.gd" id="1_hspfx"]
+[ext_resource type="Theme" uid="uid://n57051tya53w" path="res://hud/theme.tres" id="2_k3dtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iri7f"]
+size = Vector2(50, 50)
+
+[node name="Brick" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_hspfx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iri7f")
+
+[node name="Letter" type="Label" parent="."]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -33.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_k3dtg")
+theme_override_font_sizes/font_size = 48
+text = "A"
