@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqu7w6wupf2du"
-path="res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"
+uid="uid://ulo4llxlpd27"
+path="res://.godot/imported/keycap_green.png-04ce1a279c862822a78d84fa37dfbc60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wall.png"
-dest_files=["res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"]
+source_file="res://assets/images/keycap_green.png"
+dest_files=["res://.godot/imported/keycap_green.png-04ce1a279c862822a78d84fa37dfbc60.ctex"]
 
 [params]
 

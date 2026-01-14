@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr250orhqfr70"]
+
+[ext_resource type="PackedScene" uid="uid://bu8b86i2uavg5" path="res://scenes/base_level.tscn" id="1_4h2c1"]
+[ext_resource type="PackedScene" uid="uid://c68opjcbn632m" path="res://scenes/brick_set/brick_set.tscn" id="2_qgle8"]
+
+[node name="LevelOne" instance=ExtResource("1_4h2c1")]
+
+[node name="BrickSet" parent="Bricks" index="0" instance=ExtResource("2_qgle8")]
+position = Vector2(192, 192)
+rows = 2
+columns = 16
+
+[node name="BrickSet2" parent="Bricks" index="1" instance=ExtResource("2_qgle8")]
+position = Vector2(192, 384)
+rows = 8
+columns = 3
+
+[node name="BrickSet3" parent="Bricks" index="2" instance=ExtResource("2_qgle8")]
+position = Vector2(840, 384)
+rows = 8
+columns = 3
+
+[node name="BrickSet4" parent="Bricks" index="3" instance=ExtResource("2_qgle8")]
+position = Vector2(512, 384)
+rows = 4
+columns = 3
