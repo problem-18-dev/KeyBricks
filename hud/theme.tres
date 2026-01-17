@@ -27,7 +27,7 @@ expand_margin_bottom = 2.0
 
 [resource]
 default_font = ExtResource("1_wdedr")
-Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_color = Color(0.0627451, 0.047058824, 0.03137255, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
 Label/font_sizes/font_size = 64

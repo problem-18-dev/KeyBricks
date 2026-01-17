@@ -1,42 +1,67 @@
 extends RigidBody2D
 
+signal ball_started
 signal ball_destroyed
 
-@export_category("Start")
-@export var speed := 150.0
+@export_category("Movement")
+@export var min_speed := 150.0
+@export var max_speed := 450.0
+@export var min_vertical_velocity := 16
+@export var min_horizontal_velocity := 16
 @export_range(-45, 45, 1.0) var start_rotation := 0.0
 @export_category("Collision")
-@export var acceleration_on_bounce := 0.025
+@export var acceleration_on_bounce := 15.0
 
-var _velocity: Vector2
+var _direction: Vector2
+var _speed: float
 var _has_started := false
 
 
 func _process(_delta: float) -> void:
 	if position.y >= 1200:
 		ball_destroyed.emit()
-		queue_free()
 
 
 func _physics_process(delta: float) -> void:
 	if not _has_started:
 		return
 
-	var collision := move_and_collide(_velocity * delta)
+	var collision := move_and_collide(_direction.normalized() * _speed * delta)
 	if collision:
 		var collider := collision.get_collider()
 		if collider is Brick:
+			AudioManager.play("key_press")
 			collider.hit()
-		var bounce_direction := _velocity.bounce(collision.get_normal())
-		var new_velocity := bounce_direction * (acceleration_on_bounce + 1)
-		_velocity = new_velocity
+		elif collider is Paddle:
+			AudioManager.play("spacebar")
+		else:
+			AudioManager.play("wall_bounce")
+		_direction = _direction.bounce(collision.get_normal())
+		# Bounce
+		if abs(_direction.y) <= 15.0:
+			_direction.y = min_vertical_velocity * sign(_direction.y)
+		if abs(_direction.x) <= 15.0:
+			_direction.x = min_horizontal_velocity * sign(_direction.x)
+
+		# Accelerate
+		_speed += acceleration_on_bounce
+		_speed = min(_speed, max_speed)
 
 
-func _start() -> void:
-	_velocity = Vector2.UP.rotated(deg_to_rad(start_rotation)) * speed
+func reset(new_position: Vector2) -> void:
+	_direction = Vector2.ZERO
+	_speed = 0
+	global_position = new_position
+	_has_started = false
+
+
+func start() -> void:
+	_direction = Vector2.UP.rotated(deg_to_rad(start_rotation)) * min_speed
+	_speed = min_speed
 	_has_started = true
+	ball_started.emit()
 
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and not _has_started:
-		_start()
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("interact") or event is InputEventScreenTouch) and not _has_started:
+		start()

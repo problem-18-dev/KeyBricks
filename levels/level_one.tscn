@@ -4,23 +4,36 @@
 [ext_resource type="PackedScene" uid="uid://c68opjcbn632m" path="res://scenes/brick_set/brick_set.tscn" id="2_qgle8"]
 
 [node name="LevelOne" instance=ExtResource("1_4h2c1")]
+next_level = 3
+max_ball_speed = 600.0
+min_ball_speed = 275.0
+ball_acceleration = 16.0
 
-[node name="BrickSet" parent="Bricks" index="0" instance=ExtResource("2_qgle8")]
-position = Vector2(192, 192)
-rows = 2
-columns = 16
-
-[node name="BrickSet2" parent="Bricks" index="1" instance=ExtResource("2_qgle8")]
-position = Vector2(192, 384)
-rows = 8
-columns = 3
-
-[node name="BrickSet3" parent="Bricks" index="2" instance=ExtResource("2_qgle8")]
-position = Vector2(840, 384)
-rows = 8
-columns = 3
-
-[node name="BrickSet4" parent="Bricks" index="3" instance=ExtResource("2_qgle8")]
-position = Vector2(512, 384)
+[node name="LeftOne" parent="Bricks" index="0" instance=ExtResource("2_qgle8")]
+position = Vector2(160, 384)
 rows = 4
-columns = 3
+columns = 4
+
+[node name="LeftTwo" parent="Bricks" index="1" instance=ExtResource("2_qgle8")]
+position = Vector2(360, 384)
+rows = 4
+difficulty = 2
+
+[node name="Middle" parent="Bricks" index="2" instance=ExtResource("2_qgle8")]
+position = Vector2(536, 384)
+difficulty = 2
+
+[node name="RightOne" parent="Bricks" index="3" instance=ExtResource("2_qgle8")]
+position = Vector2(704, 384)
+rows = 4
+difficulty = 2
+
+[node name="RightTwo" parent="Bricks" index="4" instance=ExtResource("2_qgle8")]
+position = Vector2(754, 384)
+rows = 4
+columns = 4
+
+[node name="Top" parent="Bricks" index="5" instance=ExtResource("2_qgle8")]
+position = Vector2(184, 256)
+columns = 15
+difficulty = 1
