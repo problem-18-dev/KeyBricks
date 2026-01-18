@@ -1,39 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr250orhqfr70"]
+[gd_scene load_steps=3 format=3 uid="uid://bqahorxhs8ufg"]
 
 [ext_resource type="PackedScene" uid="uid://bu8b86i2uavg5" path="res://scenes/base_level.tscn" id="1_4h2c1"]
 [ext_resource type="PackedScene" uid="uid://c68opjcbn632m" path="res://scenes/brick_set/brick_set.tscn" id="2_qgle8"]
 
 [node name="LevelOne" instance=ExtResource("1_4h2c1")]
-next_level = 3
+next_level = 4
+word = "THREEKEY"
+max_letter_attempts = 2
 max_ball_speed = 600.0
-min_ball_speed = 275.0
+min_ball_speed = 300.0
 ball_acceleration = 16.0
 
-[node name="LeftOne" parent="Bricks" index="0" instance=ExtResource("2_qgle8")]
-position = Vector2(160, 384)
-rows = 4
-columns = 4
-
-[node name="LeftTwo" parent="Bricks" index="1" instance=ExtResource("2_qgle8")]
-position = Vector2(360, 384)
-rows = 4
-difficulty = 2
-
-[node name="Middle" parent="Bricks" index="2" instance=ExtResource("2_qgle8")]
-position = Vector2(536, 384)
-difficulty = 2
-
-[node name="RightOne" parent="Bricks" index="3" instance=ExtResource("2_qgle8")]
-position = Vector2(704, 384)
-rows = 4
-difficulty = 2
-
-[node name="RightTwo" parent="Bricks" index="4" instance=ExtResource("2_qgle8")]
-position = Vector2(754, 384)
-rows = 4
-columns = 4
-
-[node name="Top" parent="Bricks" index="5" instance=ExtResource("2_qgle8")]
-position = Vector2(184, 256)
-columns = 15
+[node name="Top" parent="Bricks" index="0" instance=ExtResource("2_qgle8")]
+position = Vector2(136, 192)
+columns = 17
 difficulty = 1
+
+[node name="Left" parent="Bricks" index="1" instance=ExtResource("2_qgle8")]
+position = Vector2(136, 242)
+rows = 10
+difficulty = 1
+
+[node name="Right" parent="Bricks" index="2" instance=ExtResource("2_qgle8")]
+position = Vector2(936, 242)
+rows = 10
+difficulty = 1
+
+[node name="Bottom" parent="Bricks" index="3" instance=ExtResource("2_qgle8")]
+position = Vector2(136, 742)
+columns = 4
+
+[node name="Bottom2" parent="Bricks" index="4" instance=ExtResource("2_qgle8")]
+position = Vector2(786, 742)
+columns = 4
+
+[node name="Center" parent="Bricks" index="5" instance=ExtResource("2_qgle8")]
+position = Vector2(344, 384)
+rows = 4
+
+[node name="Center2" parent="Bricks" index="6" instance=ExtResource("2_qgle8")]
+position = Vector2(536, 384)
+rows = 4
+
+[node name="Center3" parent="Bricks" index="7" instance=ExtResource("2_qgle8")]
+position = Vector2(728, 384)
+rows = 4

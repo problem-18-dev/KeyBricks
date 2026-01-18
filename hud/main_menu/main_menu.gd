@@ -41,5 +41,5 @@ func _on_brick_timer_timeout() -> void:
 
 
 func _set_instructions_text() -> void:
-	if not OS.has_feature("web_android") or not OS.has_feature("web_ios"):
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$UI/InstructionsLabel.text = "PRESS LEFT OR RIGHT\nSIDE OF SCREEN TO MOVE"
