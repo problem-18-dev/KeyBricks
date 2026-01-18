@@ -94,11 +94,10 @@ func _on_ball_destroyed() -> void:
 	$HUD.change_lives(GameManager.lives)
 
 	if lives <= 0:
-		AudioManager.play("game_over")
-		$HUD.show_message("GAME OVER")
 		_paddle.queue_free()
 		_ball.queue_free()
-		await get_tree().create_timer(2.0).timeout
+		AudioManager.play("game_over")
+		await $HUD.show_message("GAME OVER", 2)
 		GameManager.save_high_score()
 		GameManager.main_scene.reset_stats()
 		GameManager.main_scene.load_scene(Main.Scene.End)
