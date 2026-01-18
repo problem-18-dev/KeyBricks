@@ -16,6 +16,8 @@ lock_rotation = true
 script = ExtResource("1_oqv3d")
 min_speed = 225.0
 max_speed = 575.0
+min_vertical_velocity = 20
+min_horizontal_velocity = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nv6q1")

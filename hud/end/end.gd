@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") or event is InputEventScreenTouch:
 		AudioManager.play("spacebar")
 		GameManager.main_scene.load_scene(Main.Scene.MainMenu)
 

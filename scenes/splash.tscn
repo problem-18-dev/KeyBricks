@@ -25,12 +25,9 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.56666666, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"play_splash_sound"
-}, {
 "args": [],
 "method": &"main_menu"
 }]

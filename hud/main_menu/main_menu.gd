@@ -9,13 +9,13 @@ const Z := 90
 
 func _ready() -> void:
 	$UI/HighScoreLabel.text = "HIGH SCORE: " + str(GameManager.high_score)
+	_set_instructions_text()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") or event is InputEventScreenTouch:
 		AudioManager.play("spacebar")
 		GameManager.main_scene.load_scene(Main.Scene.LevelOne)
-
 
 
 func _on_brick_timer_timeout() -> void:
@@ -38,3 +38,8 @@ func _on_brick_timer_timeout() -> void:
 	brick.modulate = Color(0.4, 0.4, 0.4, 1.0)
 
 	$BackgroundBricks.add_child(brick)
+
+
+func _set_instructions_text() -> void:
+	if not OS.has_feature("web_android") or not OS.has_feature("web_ios"):
+		$UI/InstructionsLabel.text = "PRESS LEFT OR RIGHT\nSIDE OF SCREEN TO MOVE"
