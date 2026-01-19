@@ -15,7 +15,6 @@ var max_letter_attempts := 3
 
 var _ball_scene: PackedScene = preload("res://scenes/ball/ball.tscn")
 var _paddle_scene: PackedScene = preload("res://scenes/paddle/paddle.tscn")
-var _available_letters := word.split("")
 var _letters_hit := 0
 var _ball: Node
 var _paddle: Node
@@ -23,28 +22,28 @@ var _paddle: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_assign_bricks()
+	_assign_bricks(word.split(""))
 	_spawn_ball()
 	_spawn_paddle()
 	$HUD.spawn_word(word)
 
 
-func _assign_bricks() -> void:
+func _assign_bricks(available_letters: Array[String]) -> void:
 	var bricks := get_tree().get_nodes_in_group("bricks")
 	var letter_attempts := 0
 	for i in bricks.size():
 		var letter := String.chr(randi_range(A, Z))
-		letter_attempts = 0 if _available_letters.has(letter) else letter_attempts + 1
+		letter_attempts = 0 if available_letters.has(letter) else letter_attempts + 1
 
-		if _available_letters.size() > 0:
-			if _available_letters.has(letter):
-				var letter_index := _available_letters.find(letter)
-				_available_letters.remove_at(letter_index)
+		if available_letters.size() > 0:
+			if available_letters.has(letter):
+				var letter_index := available_letters.find(letter)
+				available_letters.remove_at(letter_index)
 				letter_attempts = 0
 			elif letter_attempts >= max_letter_attempts:
-				var letter_index := randi_range(0, _available_letters.size() - 1)
-				letter = _available_letters[letter_index]
-				_available_letters.remove_at(letter_index)
+				var letter_index := randi_range(0, available_letters.size() - 1)
+				letter = available_letters[letter_index]
+				available_letters.remove_at(letter_index)
 				letter_attempts = 0
 
 		var brick: Brick = bricks[i]
@@ -54,22 +53,19 @@ func _assign_bricks() -> void:
 
 func _spawn_ball() -> void:
 	var ball := _ball_scene.instantiate()
-	ball.position = $BallSpawnLocation.position
-	var start_rotation = randf_range(-45, 45)
-	start_rotation = start_rotation
-	ball.start_rotation = start_rotation
+	ball.reset($BallSpawnLocation.position)
 	ball.max_speed = max_ball_speed
 	ball.min_speed = min_ball_speed
 	ball.acceleration_on_bounce = ball_acceleration
-	ball.ball_destroyed.connect(_on_ball_destroyed)
 	ball.ball_started.connect(_on_ball_started)
+	ball.ball_lost.connect(_on_ball_lost)
 	_ball = ball
 	add_child(ball)
 
 
 func _spawn_paddle() -> void:
 	var paddle := _paddle_scene.instantiate()
-	paddle.position = $PaddleSpawnLocation.position
+	paddle.reset($PaddleSpawnLocation.position)
 	_paddle = paddle
 	add_child(paddle)
 
@@ -86,24 +82,25 @@ func _restart_level() -> void:
 
 func _load_next_level() -> void:
 	GameManager.save_high_score()
+	GameManager.change_lives(GameManager.main_scene.start_lives)
 	GameManager.main_scene.load_scene(next_level)
 
 
-func _on_ball_destroyed() -> void:
+func _on_ball_lost() -> void:
 	var lives := GameManager.lose_life()
 	$HUD.change_lives(GameManager.lives)
 
-	if lives <= 0:
-		_paddle.queue_free()
-		_ball.queue_free()
-		AudioManager.play("game_over")
-		await $HUD.show_message("GAME OVER", 2)
-		GameManager.save_high_score()
-		GameManager.main_scene.reset_stats()
-		GameManager.main_scene.load_scene(Main.Scene.End)
+	if lives > 0:
+		_restart_level()
 		return
 
-	_restart_level()
+	_paddle.queue_free()
+	_ball.queue_free()
+	AudioManager.play("game_over")
+	await $HUD.show_message("GAME OVER", 2)
+	GameManager.save_high_score()
+	GameManager.main_scene.reset_stats()
+	GameManager.main_scene.load_scene(Main.Scene.End)
 
 
 func _on_ball_started() -> void:

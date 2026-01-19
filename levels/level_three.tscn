@@ -5,43 +5,89 @@
 
 [node name="LevelThree" instance=ExtResource("1_yxx76")]
 next_level = 5
-word = "SMILEYFACE"
-max_ball_speed = 650.0
-min_ball_speed = 325.0
+max_letter_attempts = 2
+max_ball_speed = 665.0
+min_ball_speed = 350.0
 ball_acceleration = 20.0
 
 [node name="LeftEye" parent="Bricks" index="0" instance=ExtResource("2_ncmil")]
-position = Vector2(312, 256)
+position = Vector2(312, 192)
 rows = 4
 difficulty = 2
 
 [node name="LeftEye2" parent="Bricks" index="1" instance=ExtResource("2_ncmil")]
-position = Vector2(262, 256)
+position = Vector2(262, 192)
 
-[node name="RightEye" parent="Bricks" index="2" instance=ExtResource("2_ncmil")]
-position = Vector2(760, 256)
+[node name="LeftEye3" parent="Bricks" index="2" instance=ExtResource("2_ncmil")]
+position = Vector2(176, 192)
 rows = 4
 difficulty = 2
 
-[node name="RightEye2" parent="Bricks" index="3" instance=ExtResource("2_ncmil")]
-position = Vector2(710, 256)
+[node name="LeftEye4" parent="Bricks" index="3" instance=ExtResource("2_ncmil")]
+position = Vector2(226, 342)
 
-[node name="Nose" parent="Bricks" index="4" instance=ExtResource("2_ncmil")]
-position = Vector2(536, 448)
+[node name="RightEye" parent="Bricks" index="4" instance=ExtResource("2_ncmil")]
+position = Vector2(896, 192)
 rows = 4
+difficulty = 2
+
+[node name="RightEye2" parent="Bricks" index="5" instance=ExtResource("2_ncmil")]
+position = Vector2(846, 192)
+
+[node name="RightEye3" parent="Bricks" index="6" instance=ExtResource("2_ncmil")]
+position = Vector2(760, 192)
+rows = 4
+difficulty = 2
+
+[node name="RightEye4" parent="Bricks" index="7" instance=ExtResource("2_ncmil")]
+position = Vector2(810, 342)
+
+[node name="Nose" parent="Bricks" index="8" instance=ExtResource("2_ncmil")]
+position = Vector2(528, 440)
+rows = 3
+difficulty = 2
+
+[node name="Nose2" parent="Bricks" index="9" instance=ExtResource("2_ncmil")]
+position = Vector2(578, 540)
 difficulty = 1
 
-[node name="Mouth" parent="Bricks" index="5" instance=ExtResource("2_ncmil")]
-position = Vector2(128, 512)
-rows = 4
+[node name="Single" parent="Bricks" index="10" instance=ExtResource("2_ncmil")]
+position = Vector2(336, 464)
 difficulty = 2
 
-[node name="Mouth3" parent="Bricks" index="6" instance=ExtResource("2_ncmil")]
-position = Vector2(928, 512)
-rows = 4
+[node name="Single5" parent="Bricks" index="11" instance=ExtResource("2_ncmil")]
+position = Vector2(728, 456)
 difficulty = 2
 
-[node name="Mouth2" parent="Bricks" index="7" instance=ExtResource("2_ncmil")]
-position = Vector2(128, 712)
-columns = 17
-difficulty = 2
+[node name="Mouth" parent="Bricks" index="12" instance=ExtResource("2_ncmil")]
+position = Vector2(160, 576)
+difficulty = 1
+
+[node name="Mouth7" parent="Bricks" index="13" instance=ExtResource("2_ncmil")]
+position = Vector2(855, 577)
+difficulty = 1
+
+[node name="Mouth2" parent="Bricks" index="14" instance=ExtResource("2_ncmil")]
+position = Vector2(209, 626)
+columns = 2
+difficulty = 1
+
+[node name="Mouth6" parent="Bricks" index="15" instance=ExtResource("2_ncmil")]
+position = Vector2(756, 627)
+columns = 2
+difficulty = 1
+
+[node name="Mouth3" parent="Bricks" index="16" instance=ExtResource("2_ncmil")]
+position = Vector2(308, 676)
+columns = 3
+difficulty = 1
+
+[node name="Mouth4" parent="Bricks" index="17" instance=ExtResource("2_ncmil")]
+position = Vector2(457, 726)
+columns = 3
+difficulty = 1
+
+[node name="Mouth5" parent="Bricks" index="18" instance=ExtResource("2_ncmil")]
+position = Vector2(606, 677)
+columns = 3
+difficulty = 1

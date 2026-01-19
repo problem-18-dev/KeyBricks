@@ -6,13 +6,6 @@ signal brick_destroyed(letter: String, score: int)
 enum Difficulty { EASY, MEDIUM, HARD }
 enum Size { SMALL, LARGE }
 
-@export_category("Properties")
-@export var letter: String = "A"
-@export var difficulty: Difficulty = Difficulty.HARD
-@export var size := Size.SMALL
-
-@onready var _current_difficulty: Difficulty
-
 const _difficulties: Dictionary[Difficulty, String] = {
 	Difficulty.HARD: "res://assets/images/keycap_red.png" ,
 	Difficulty.MEDIUM: "res://assets/images/keycap_orange.png",
@@ -24,6 +17,13 @@ const _scores: Dictionary[Difficulty, int] = {
 	Difficulty.MEDIUM: 50,
 	Difficulty.EASY: 25,
 }
+
+@export_category("Properties")
+@export var letter: String = "A"
+@export var difficulty: Difficulty = Difficulty.HARD
+@export var size := Size.SMALL
+
+@onready var _current_difficulty: Difficulty
 
 
 # Called when the node enters the scene tree for the first time.
