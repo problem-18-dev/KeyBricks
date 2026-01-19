@@ -18,6 +18,11 @@ var _speed: float
 var _has_started := false
 
 
+func _process(_delta: float) -> void:
+	if position.y >= get_viewport_rect().size.y:
+		ball_lost.emit()
+
+
 func _physics_process(delta: float) -> void:
 	if not _has_started:
 		return
@@ -33,6 +38,7 @@ func _input(event: InputEvent) -> void:
 
 
 func reset(new_position: Vector2) -> void:
+	sleeping = true
 	_has_started = false
 	_direction = Vector2.ZERO
 	_speed = 0
@@ -43,6 +49,7 @@ func start() -> void:
 	_direction = Vector2.UP.rotated(randf_range(-rotation_diff, rotation_diff))
 	_speed = min_speed
 	_has_started = true
+	sleeping = false
 	ball_started.emit()
 
 
@@ -74,7 +81,3 @@ func _handle_collision(collision: KinematicCollision2D) -> void:
 
 	AudioManager.play(audio_to_play)
 	_increase_speed()
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	ball_lost.emit()
