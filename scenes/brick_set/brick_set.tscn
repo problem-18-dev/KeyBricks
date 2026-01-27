@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c68opjcbn632m"]
+[gd_scene format=3 uid="uid://c68opjcbn632m"]
 
 [ext_resource type="Script" uid="uid://byxylv2y7khnu" path="res://scenes/brick_set/brick_set.gd" id="1_is5t8"]
 
-[node name="BrickSet" type="Node2D"]
+[node name="BrickSet" type="Node2D" unique_id=476151049]
 script = ExtResource("1_is5t8")
 metadata/_edit_group_ = true

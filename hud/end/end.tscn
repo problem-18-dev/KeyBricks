@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c4bpgmvgbd3wv"]
+[gd_scene format=4 uid="uid://c4bpgmvgbd3wv"]
 
 [ext_resource type="PackedScene" uid="uid://daiiabcomntiq" path="res://scenes/brick/brick.tscn" id="1_bb8w8"]
 [ext_resource type="Script" uid="uid://dl81dfkxlmdis" path="res://hud/end/end.gd" id="1_u1cma"]
@@ -61,11 +61,11 @@ _data = {
 &"RESET": SubResource("Animation_n1udd")
 }
 
-[node name="End" type="Node"]
+[node name="End" type="Node" unique_id=1590443641]
 script = ExtResource("1_u1cma")
 brick_scene = ExtResource("1_bb8w8")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=523425140]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,11 +74,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0627451, 0.047058824, 0.03137255, 1)
 
-[node name="BackgroundBricks" type="Node" parent="."]
+[node name="BackgroundBricks" type="Node" parent="." unique_id=878567418]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1669555556]
 
-[node name="HighScore" type="Label" parent="UI"]
+[node name="HighScore" type="Label" parent="UI" unique_id=1867970593]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -97,7 +97,7 @@ text = "HIGH SCORE: 213"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="UI"]
+[node name="ContinueLabel" type="Label" parent="UI" unique_id=1139205498]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -116,124 +116,122 @@ TO CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bricks" type="Node" parent="."]
+[node name="Bricks" type="Node" parent="." unique_id=753996388]
 
-[node name="Thanks" type="Node2D" parent="Bricks"]
+[node name="Thanks" type="Node2D" parent="Bricks" unique_id=844215301]
 position = Vector2(174, 0)
 
-[node name="T" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="T" parent="Bricks/Thanks" unique_id=623412651 instance=ExtResource("1_bb8w8")]
 position = Vector2(149, 216)
 letter = "T"
 size = 1
 
-[node name="H" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="H" parent="Bricks/Thanks" unique_id=783913503 instance=ExtResource("1_bb8w8")]
 position = Vector2(232, 216)
 letter = "H"
 size = 1
 
-[node name="A" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="A" parent="Bricks/Thanks" unique_id=2105694190 instance=ExtResource("1_bb8w8")]
 position = Vector2(312, 216)
 size = 1
 
-[node name="N" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="N" parent="Bricks/Thanks" unique_id=1302024367 instance=ExtResource("1_bb8w8")]
 position = Vector2(392, 216)
 letter = "N"
 size = 1
 
-[node name="K" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="K" parent="Bricks/Thanks" unique_id=1451877416 instance=ExtResource("1_bb8w8")]
 position = Vector2(472, 216)
 letter = "K"
 size = 1
 
-[node name="S" parent="Bricks/Thanks" instance=ExtResource("1_bb8w8")]
+[node name="S" parent="Bricks/Thanks" unique_id=472720883 instance=ExtResource("1_bb8w8")]
 position = Vector2(552, 216)
 letter = "S"
 size = 1
 
-[node name="For" type="Node2D" parent="Bricks"]
+[node name="For" type="Node2D" parent="Bricks" unique_id=179140385]
 position = Vector2(236, 0)
 
-[node name="F" parent="Bricks/For" instance=ExtResource("1_bb8w8")]
+[node name="F" parent="Bricks/For" unique_id=2107669056 instance=ExtResource("1_bb8w8")]
 position = Vector2(208, 316)
 letter = "F"
 difficulty = 1
 size = 1
 
-[node name="O" parent="Bricks/For" instance=ExtResource("1_bb8w8")]
+[node name="O" parent="Bricks/For" unique_id=1940312272 instance=ExtResource("1_bb8w8")]
 position = Vector2(291, 316)
 letter = "O"
 difficulty = 1
 size = 1
 
-[node name="R" parent="Bricks/For" instance=ExtResource("1_bb8w8")]
+[node name="R" parent="Bricks/For" unique_id=1436090841 instance=ExtResource("1_bb8w8")]
 position = Vector2(371, 316)
 letter = "R"
 difficulty = 1
 size = 1
 
-[node name="Playing" type="Node2D" parent="Bricks"]
+[node name="Playing" type="Node2D" parent="Bricks" unique_id=1868390322]
 position = Vector2(-192, 0)
 
-[node name="P" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="P" parent="Bricks/Playing" unique_id=1830160744 instance=ExtResource("1_bb8w8")]
 position = Vector2(476, 416)
 letter = "P"
 difficulty = 2
 size = 1
 
-[node name="L" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="L" parent="Bricks/Playing" unique_id=505510469 instance=ExtResource("1_bb8w8")]
 position = Vector2(559, 416)
 letter = "L"
 difficulty = 2
 size = 1
 
-[node name="A" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="A" parent="Bricks/Playing" unique_id=976789809 instance=ExtResource("1_bb8w8")]
 position = Vector2(639, 416)
 difficulty = 2
 size = 1
 
-[node name="Y" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="Y" parent="Bricks/Playing" unique_id=1192740423 instance=ExtResource("1_bb8w8")]
 position = Vector2(719, 416)
 letter = "Y"
 difficulty = 2
 size = 1
 
-[node name="I" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="I" parent="Bricks/Playing" unique_id=1546876973 instance=ExtResource("1_bb8w8")]
 position = Vector2(799, 416)
 letter = "I"
 difficulty = 2
 size = 1
 
-[node name="N" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="N" parent="Bricks/Playing" unique_id=696152252 instance=ExtResource("1_bb8w8")]
 position = Vector2(879, 416)
 letter = "N"
 difficulty = 2
 size = 1
 
-[node name="G" parent="Bricks/Playing" instance=ExtResource("1_bb8w8")]
+[node name="G" parent="Bricks/Playing" unique_id=753182938 instance=ExtResource("1_bb8w8")]
 position = Vector2(960, 416)
 letter = "G"
 difficulty = 2
 size = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=961043323]
 modulate = Color(0.75, 0.75, 0.75, 1)
 tile_map_data = PackedByteArray("AAAfAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAAdAAAAAQAAAAAAAAAcAAAAAQAAAAAAAAAbAAAAAQAAAAAAAAAaAAAAAQAAAAAAAAAZAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAATAAAAAQAAAAAAAAASAAAAAQAAAAAAAAARAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA8AAQAAAAAAAAAAABAAAQAAAAAAAAAAABEAAQAAAAAAAAAAABIAAQAAAAAAAAAAABMAAQAAAAAAAAAAABQAAQAAAAAAAAAAABUAAQAAAAAAAAAAABYAAQAAAAAAAAAAABcAAQAAAAAAAAAAABgAAQAAAAAAAAAAABkAAQAAAAAAAAAAABoAAQAAAAAAAAAAABsAAQAAAAAAAAAAABwAAQAAAAAAAAAAAB0AAQAAAAAAAAAAAB4AAQAAAAAAAAAAAB8AAQAAAAAAAAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAANAAIAAQAAAAAAAAANAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQAAAAAAAAATAAIAAQAAAAAAAAATAAEAAQAAAAAAAAAUAAEAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAVAAEAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAIAAQAAAAAAAAAXAAEAAQAAAAAAAAAYAAEAAQAAAAAAAAAYAAIAAQAAAAAAAAAZAAIAAQAAAAAAAAAZAAEAAQAAAAAAAAAaAAEAAQAAAAAAAAAaAAIAAQAAAAAAAAAbAAIAAQAAAAAAAAAbAAEAAQAAAAAAAAAcAAEAAQAAAAAAAAAcAAIAAQAAAAAAAAAdAAIAAQAAAAAAAAAdAAEAAQAAAAAAAAAeAAEAAQAAAAAAAAAeAAIAAQAAAAAAAAAfAAIAAQAAAAAAAAAfAAEAAQAAAAAAAAAfAAMAAQAAAAAAAAAfAAQAAQAAAAAAAAAfAAUAAQAAAAAAAAAfAAYAAQAAAAAAAAAfAAcAAQAAAAAAAAAfAAgAAQAAAAAAAAAfAAkAAQAAAAAAAAAfAAoAAQAAAAAAAAAfAAsAAQAAAAAAAAAfAAwAAQAAAAAAAAAfAA0AAQAAAAAAAAAfAA4AAQAAAAAAAAAfAA8AAQAAAAAAAAAfABAAAQAAAAAAAAAfABEAAQAAAAAAAAAfABIAAQAAAAAAAAAfABMAAQAAAAAAAAAfABQAAQAAAAAAAAAfABUAAQAAAAAAAAAfABYAAQAAAAAAAAAfABcAAQAAAAAAAAAfABgAAQAAAAAAAAAfABkAAQAAAAAAAAAfABoAAQAAAAAAAAAfABsAAQAAAAAAAAAfABwAAQAAAAAAAAAfAB0AAQAAAAAAAAAfAB4AAQAAAAAAAAAfAB8AAQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAD//woAAQAAAAAAAAD//wsAAQAAAAAAAAD//wwAAQAAAAAAAAD//w0AAQAAAAAAAAD//w4AAQAAAAAAAAD//w8AAQAAAAAAAAD//xAAAQAAAAAAAAD//xEAAQAAAAAAAAD//xIAAQAAAAAAAAD//xMAAQAAAAAAAAD//xQAAQAAAAAAAAD//xUAAQAAAAAAAAD//xYAAQAAAAAAAAD//xcAAQAAAAAAAAD//xgAAQAAAAAAAAD//xkAAQAAAAAAAAD//xoAAQAAAAAAAAD//xsAAQAAAAAAAAD//xwAAQAAAAAAAAD//x0AAQAAAAAAAAD//x4AAQAAAAAAAAD//x8AAQAAAAAAAAAgAAAAAQAAAAAAAAAgAAEAAQAAAAAAAAAgAAIAAQAAAAAAAAAgAAMAAQAAAAAAAAAgAAQAAQAAAAAAAAAgAAUAAQAAAAAAAAAgAAYAAQAAAAAAAAAgAAcAAQAAAAAAAAAgAAgAAQAAAAAAAAAgAAkAAQAAAAAAAAAgAAoAAQAAAAAAAAAgAAsAAQAAAAAAAAAgAAwAAQAAAAAAAAAgAA0AAQAAAAAAAAAgAA4AAQAAAAAAAAAgAA8AAQAAAAAAAAAgABAAAQAAAAAAAAAgABEAAQAAAAAAAAAgABIAAQAAAAAAAAAgABMAAQAAAAAAAAAgABQAAQAAAAAAAAAgABUAAQAAAAAAAAAgABYAAQAAAAAAAAAgABcAAQAAAAAAAAAgABgAAQAAAAAAAAAgABkAAQAAAAAAAAAgABoAAQAAAAAAAAAgABsAAQAAAAAAAAAgABwAAQAAAAAAAAAgAB0AAQAAAAAAAAAgAB4AAQAAAAAAAAAgAB8AAQAAAAAAAAAfACAAAQAAAAAAAAAgACAAAQAAAAAAAAAAACAAAQAAAAAAAAD//yAAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_n1udd")
 
-[node name="BrickPath" type="Path2D" parent="."]
+[node name="BrickPath" type="Path2D" parent="." unique_id=191294973]
 curve = SubResource("Curve2D_2vsse")
 
-[node name="BrickSpawnLocation" type="PathFollow2D" parent="BrickPath"]
+[node name="BrickSpawnLocation" type="PathFollow2D" parent="BrickPath" unique_id=1092544840]
 position = Vector2(-64, -64)
 
-[node name="BrickTimer" type="Timer" parent="."]
+[node name="BrickTimer" type="Timer" parent="." unique_id=1367178612]
 wait_time = 0.25
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_n1udd")
-}
-autoplay = "Continue"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1884104147]
+libraries/ = SubResource("AnimationLibrary_n1udd")
+autoplay = &"Continue"
 
 [connection signal="timeout" from="BrickTimer" to="." method="_on_brick_timer_timeout"]

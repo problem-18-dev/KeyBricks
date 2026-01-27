@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw1p2dkfhuq7c"]
+[gd_scene format=3 uid="uid://dw1p2dkfhuq7c"]
 
 [ext_resource type="Script" uid="uid://bk34ucum7exyt" path="res://scenes/hud/hud.gd" id="1_48c2t"]
 [ext_resource type="Theme" uid="uid://n57051tya53w" path="res://hud/theme.tres" id="2_cgeww"]
 [ext_resource type="Texture2D" uid="uid://dm4ntxecehosa" path="res://assets/images/heart.png" id="3_c45xl"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=391834953]
 script = ExtResource("1_48c2t")
 
-[node name="WordSpawnLocation" type="Marker2D" parent="."]
+[node name="WordSpawnLocation" type="Marker2D" parent="." unique_id=1518847115]
 position = Vector2(56, 72)
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=244379982]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 0
 theme = ExtResource("2_cgeww")
 alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="HBoxContainer" unique_id=1768709209]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -28,23 +28,23 @@ theme_override_font_sizes/font_size = 38
 text = "SCORE: 0"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1693262155]
 layout_mode = 2
 
-[node name="LivesLabel" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="LivesLabel" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=1894673958]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "LIVES:"
 vertical_alignment = 1
 
-[node name="Hearts" type="HBoxContainer" parent="HBoxContainer/HBoxContainer"]
+[node name="Hearts" type="HBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=1273614088]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 6
 
-[node name="Heart" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts"]
+[node name="Heart" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts" unique_id=1127108673]
 visible = false
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
@@ -53,7 +53,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_c45xl")
 expand_mode = 4
 
-[node name="Heart2" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts"]
+[node name="Heart2" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts" unique_id=1289107524]
 visible = false
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
@@ -62,7 +62,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_c45xl")
 expand_mode = 4
 
-[node name="Heart3" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts"]
+[node name="Heart3" type="TextureRect" parent="HBoxContainer/HBoxContainer/Hearts" unique_id=502986781]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -70,7 +70,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_c45xl")
 expand_mode = 4
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=1989164322]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -86,7 +86,7 @@ theme_override_colors/font_color = Color(0.92156863, 0.92156863, 0.827451, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DoubleScoreLabel" type="Label" parent="."]
+[node name="DoubleScoreLabel" type="Label" parent="." unique_id=662839377]
 visible = false
 custom_minimum_size = Vector2(0, 100)
 offset_left = 33.0

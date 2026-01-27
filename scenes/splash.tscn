@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs8hit0v8077g"]
+[gd_scene format=3 uid="uid://cs8hit0v8077g"]
 
 [ext_resource type="Script" uid="uid://g6d5ouat53en" path="res://scenes/splash.gd" id="1_86pdq"]
 [ext_resource type="Texture2D" uid="uid://bmj52al8sqo6j" path="res://assets/images/splash.png" id="2_10vqf"]
@@ -54,10 +54,10 @@ _data = {
 &"RESET": SubResource("Animation_4rrho")
 }
 
-[node name="Splash" type="CanvasLayer"]
+[node name="Splash" type="CanvasLayer" unique_id=220888118]
 script = ExtResource("1_86pdq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=240134912]
 modulate = Color(0.19434929, 0.19434926, 0.19434926, 1)
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,8 +66,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_10vqf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5svwm")
-}
-autoplay = "Fade"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=236126670]
+libraries/ = SubResource("AnimationLibrary_5svwm")
+autoplay = &"Fade"

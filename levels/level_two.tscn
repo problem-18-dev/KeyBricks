@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr250orhqfr70"]
+[gd_scene format=3 uid="uid://cr250orhqfr70"]
 
 [ext_resource type="PackedScene" uid="uid://bu8b86i2uavg5" path="res://scenes/base_level.tscn" id="1_ijs4g"]
 [ext_resource type="PackedScene" uid="uid://c68opjcbn632m" path="res://scenes/brick_set/brick_set.tscn" id="2_mlt17"]
 
-[node name="LevelTwo" instance=ExtResource("1_ijs4g")]
+[node name="LevelTwo" unique_id=1358443934 instance=ExtResource("1_ijs4g")]
 next_level = 4
 word = "ERGONOMIC"
 max_letter_attempts = 4
@@ -11,31 +11,31 @@ max_ball_speed = 630.0
 min_ball_speed = 325.0
 ball_acceleration = 18.0
 
-[node name="LeftOne" parent="Bricks" index="0" instance=ExtResource("2_mlt17")]
+[node name="LeftOne" parent="Bricks" index="0" unique_id=934894402 instance=ExtResource("2_mlt17")]
 position = Vector2(114, 384)
 rows = 4
 columns = 5
 
-[node name="LeftTwo" parent="Bricks" index="1" instance=ExtResource("2_mlt17")]
+[node name="LeftTwo" parent="Bricks" index="1" unique_id=1758629289 instance=ExtResource("2_mlt17")]
 position = Vector2(364, 384)
 rows = 4
 difficulty = 2
 
-[node name="Middle" parent="Bricks" index="2" instance=ExtResource("2_mlt17")]
+[node name="Middle" parent="Bricks" index="2" unique_id=1567776619 instance=ExtResource("2_mlt17")]
 position = Vector2(536, 384)
 difficulty = 2
 
-[node name="RightOne" parent="Bricks" index="3" instance=ExtResource("2_mlt17")]
+[node name="RightOne" parent="Bricks" index="3" unique_id=807998527 instance=ExtResource("2_mlt17")]
 position = Vector2(708, 384)
 rows = 4
 difficulty = 2
 
-[node name="RightTwo" parent="Bricks" index="4" instance=ExtResource("2_mlt17")]
+[node name="RightTwo" parent="Bricks" index="4" unique_id=1042053491 instance=ExtResource("2_mlt17")]
 position = Vector2(758, 384)
 rows = 4
 columns = 5
 
-[node name="Top" parent="Bricks" index="5" instance=ExtResource("2_mlt17")]
+[node name="Top" parent="Bricks" index="5" unique_id=140491648 instance=ExtResource("2_mlt17")]
 position = Vector2(184, 256)
 columns = 15
 difficulty = 1

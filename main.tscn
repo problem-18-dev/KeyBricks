@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyrjwtouewopi"]
+[gd_scene format=3 uid="uid://dyrjwtouewopi"]
 
 [ext_resource type="Script" uid="uid://c35jrjbyhrclb" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://byhojs5ofsy5t" path="res://audio_manager.gd" id="2_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://b2tc0swawpusn" path="res://assets/sounds/broken_glimmers.ogg" id="3_h2yge"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1618723191]
 script = ExtResource("1_ig7tw")
 
-[node name="AudioManager" type="Node" parent="."]
+[node name="AudioManager" type="Node" parent="." unique_id=1503096266]
 script = ExtResource("2_0xm2m")
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1766233021]
 stream = ExtResource("3_h2yge")
 volume_db = -20.0
 
-[node name="Scene" type="Node" parent="."]
+[node name="Scene" type="Node" parent="." unique_id=1660920854]

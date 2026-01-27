@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh4hrqr4u33j"]
+[gd_scene format=3 uid="uid://dh4hrqr4u33j"]
 
 [ext_resource type="Script" uid="uid://dx25gbhaka8bj" path="res://scenes/paddle/paddle.gd" id="1_q5rgx"]
 [ext_resource type="Texture2D" uid="uid://bifibsnvx3yiq" path="res://assets/images/paddle.png" id="2_2sa55"]
@@ -9,28 +9,28 @@ size = Vector2(185, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gboxc"]
 size = Vector2(512, 1025)
 
-[node name="Paddle" type="CharacterBody2D"]
+[node name="Paddle" type="CharacterBody2D" unique_id=175302561]
 process_mode = 1
 collision_mask = 8
 script = ExtResource("1_q5rgx")
 speed = 465
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=803272197]
 shape = SubResource("RectangleShape2D_2sa55")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=785954530]
 texture = ExtResource("2_2sa55")
 
-[node name="TouchControls" type="CanvasLayer" parent="."]
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=914637286]
 
-[node name="Left" type="TouchScreenButton" parent="TouchControls"]
+[node name="Left" type="TouchScreenButton" parent="TouchControls" unique_id=459270211]
 position = Vector2(256, 512)
 shape = SubResource("RectangleShape2D_gboxc")
 action = "move_left"
 visibility_mode = 1
 
-[node name="Right" type="TouchScreenButton" parent="TouchControls"]
+[node name="Right" type="TouchScreenButton" parent="TouchControls" unique_id=185512014]
 position = Vector2(768, 512)
 shape = SubResource("RectangleShape2D_gboxc")
 action = "move_right"

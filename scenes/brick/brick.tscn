@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daiiabcomntiq"]
+[gd_scene format=3 uid="uid://daiiabcomntiq"]
 
 [ext_resource type="Script" uid="uid://dqkh7xioddn1e" path="res://scenes/brick/brick.gd" id="1_hspfx"]
 [ext_resource type="Theme" uid="uid://n57051tya53w" path="res://hud/theme.tres" id="2_k3dtg"]
@@ -44,7 +44,7 @@ _data = {
 &"RESET": SubResource("Animation_a0gjw")
 }
 
-[node name="Brick" type="RigidBody2D" groups=["bricks"]]
+[node name="Brick" type="RigidBody2D" unique_id=1476020486 groups=["bricks"]]
 collision_layer = 4
 collision_mask = 0
 mass = 3.0
@@ -52,13 +52,13 @@ script = ExtResource("1_hspfx")
 difficulty = 0
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=391484046]
 shape = SubResource("RectangleShape2D_iri7f")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=933853560]
 texture = ExtResource("3_5cq3d")
 
-[node name="Letter" type="Label" parent="."]
+[node name="Letter" type="Label" parent="." unique_id=297805683]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -76,7 +76,5 @@ text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_18nu1")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1429889437]
+libraries/ = SubResource("AnimationLibrary_18nu1")
